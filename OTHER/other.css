@@ -1,0 +1,181 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #212529;
+    background-image: url('../assets/backgrounds.jpg');
+        /* Replace with your image path */
+        background-size: cover;
+        /* Ensures the image covers the entire background */
+        background-position: center;
+        /* Centers the image */
+        background-repeat: no-repeat;
+        /* Prevents the image from repeating */
+        background-attachment: fixed;
+        /* Keeps the background fixed while scrolling */
+}
+
+/* Header Styling */
+header {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid white;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Main Content Box Styling */
+.main {
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(230, 224, 224, 0.2);
+}
+
+/* Title Styling */
+h2,
+h3 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color:white
+}
+
+table th {
+    background-color: #e6e5f0;
+    /* Table header color */
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+/* Buttons Styling */
+button,
+.btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+button:hover,
+.btn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-subject-btn {
+    background-color: #007bff;
+    /* Blue */
+    color: white;
+}
+
+.add-subject-btn:hover {
+    background-color: #0056b3;
+}
+
+.calculate-sgpa-btn {
+    background-color: #AD49E1;
+    /* Purple */
+    color: white;
+}
+
+.calculate-sgpa-btn:hover {
+    background-color: #AD49E1;
+}
+h4{
+    color:white;
+    text-align:center;
+    font-weight: bold;
+
+}
+
+/* SGPA and CGPA Box Styling */
+
+
+.sgpa-box {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+    border-radius: 8px;
+    background-color: #212529;
+}
+
+/* Input Fields Styling */
+input,
+select {
+    font-size: 1rem;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #6c63ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        width: 95%;
+    }
+
+    h2,
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

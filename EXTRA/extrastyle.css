@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #121212 url('../assets/backgrounds.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    border-bottom: 1px solid white;
+    width: 100%;
+    background-color: #212529;
+}
+
+footer {
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+
+.content-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 90%;
+    margin: 20px;
+    overflow-y: auto;
+    max-height: 95vh;
+    box-sizing: border-box;
+}
+
+.content-container h1 {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.content-container h2 {
+    color: #00ffcc;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.content-container p,
+.content-container ul,
+.content-container ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.content-container ul,
+.content-container ol {
+    padding-left: 20px;
+}
+
+.content-container table {
+    margin: 20px auto;
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.content-container table th,
+.content-container table td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+}
+
+.content-container table th {
+    background-color: #333;
+}
+
+.content-container table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+strong {
+    font-weight: bold;
+}
+
+header {
+    background-color: #6247aa;
+    padding: 15px 20px;
+}
+
+header .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #212529;
+    border-top: 1px solid white;
+    color: #fff;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

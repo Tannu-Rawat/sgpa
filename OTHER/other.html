@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Gradify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link href="other.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="p-3" style="background-color:#212529">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="../assets/planet.png" alt="logo" width="100" height="100">
+                    <span class="navbar-brand"
+                        style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.5rem;">
+                        Know your GPA
+                    </span>
+                </a>
+
+                <a href="../INFO/info.html" style="text-decoration: none;">
+                    <button type="button" class="btn btn-warning"
+                        style="padding: 12px 30px; font-size: 16px; border-radius: 5px;">
+                        Get More Info.
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CGPA Display -->
+    <div class="text-center mb-4"
+        style="background-color: #AD49E1; margin-top : 20px; padding: 20px; width: 50%; margin-left: 25%; border-radius: 10px; margin-right: 25%; border: 5px white;">
+        <h3 style="color: white;">CGPA: <span id="cgpa" style="color: white;">0.00</span></h3>
+    </div>
+
+    <!-- Semesters Section -->
+    <div id="semesters">
+        <div id="semester1">
+            <h2>Semester 1</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td><input type="text" class="form-control" placeholder="Enter Subject Name"></td>
+                        <td><input type="number" class="form-control" placeholder="Enter Credit"
+                                oninput="validateCredit(this)"></td>
+                        <td>
+                            <select class="form-control grade-select" onchange="calculateSGPA(1)">
+                                <option value="A+">A+</option>
+                                <option value="A">A</option>
+                                <option value="B+">B+</option>
+                                <option value="B">B</option>
+                                <option value="C+">C+</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-info mb-3" onclick="addSubject(1)">Add Subject</button>
+            <button class="btn btn-info mb-3" onclick="calculateSGPA(1)">Calculate SGPA</button>
+            <h4 style="color: white;">SGPA: <span id="sgpa1">0.00</span></h4>
+        </div>
+    </div>
+
+    <!-- Add Semester Button -->
+    <div class="mt-4 text-center">
+        <button class="btn btn-success" onclick="addSemester()">Add Semester</button>
+    </div>
+
+    <footer class="py-3 mt-4 text-bg-dark" style="border-top: 1px solid white; background-color: #212529;">
+        <div class="container text-center">
+            <span style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+                <img src="../assets/planet.png" alt="logo" width="50" height="50" class="me-2">
+                Made by <a href="https://www.linkedin.com/in/tannu-rawat-782757278/" target="_blank"
+                    class="text-decoration-underline text-white">Tannu Rawat</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        const gradePoints = {
+            'A+': 10,
+            'A': 9,
+            'B+': 8,
+            'B': 7,
+            'C+': 6,
+            'C': 5,
+            'D': 4,
+            'F': 0
+        };
+
+        let semesterCount = 1;
+
+        // Add a new semester
+        function addSemester() {
+            semesterCount++;
+            const semestersDiv = document.getElementById('semesters');
+            const semesterHTML = `
+                <div id="semester${semesterCount}">
+                    <h2>Semester ${semesterCount}</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>SNo</th>
+                                <th>Subject</th>
+                                <th>Credit</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td><input type="text" class="form-control" placeholder="Enter Subject Name"></td>
+                                <td><input type="number" class="form-control" placeholder="Enter Credit" oninput="validateCredit(this)"></td>
+                                <td>
+                                    <select class="form-control grade-select" onchange="calculateSGPA(${semesterCount})">
+                                        <option value="A+">A+</option>
+                                        <option value="A">A</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-info mb-3" onclick="addSubject(${semesterCount})">Add Subject</button>
+                    <button class="btn btn-info mb-3" onclick="calculateSGPA(${semesterCount})">Calculate SGPA</button>
+                    <h4>SGPA: <span id="sgpa${semesterCount}">0.00</span></h4>
+                </div>
+            `;
+            semestersDiv.insertAdjacentHTML('beforeend', semesterHTML);
+        }
+
+        // Add a new subject to a semester
+        function addSubject(semester) {
+            const semesterTable = document.querySelector(`#semester${semester} table tbody`);
+            const rowCount = semesterTable.rows.length + 1;
+            const subjectHTML = `
+                <tr>
+                    <td>${rowCount}.</td>
+                    <td><input type="text" class="form-control" placeholder="Enter Subject Name"></td>
+                    <td><input type="number" class="form-control" placeholder="Enter Credit" oninput="validateCredit(this)"></td>
+                    <td>
+                        <select class="form-control grade-select" onchange="calculateSGPA(${semester})">
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>
+                </tr>
+            `;
+            semesterTable.insertAdjacentHTML('beforeend', subjectHTML);
+        }
+
+        // Calculate SGPA for a semester
+        function calculateSGPA(semester) {
+            const rows = document.querySelectorAll(`#semester${semester} table tbody tr`);
+            let totalCredits = 0;
+            let totalPoints = 0;
+
+            rows.forEach(row => {
+                const creditInput = row.cells[2].querySelector('input');
+                const credit = parseInt(creditInput.value) || 0;
+                const gradeSelect = row.cells[3].querySelector('.grade-select');
+                const grade = gradeSelect.value;
+                const gradePoint = gradePoints[grade] || 0;
+
+                if (credit < 0) {
+                    creditInput.style.borderColor = 'red';
+                } else {
+                    creditInput.style.borderColor = '';
+                }
+
+                totalCredits += credit;
+                totalPoints += gradePoint * credit;
+            });
+
+            const sgpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 0;
+            document.getElementById(`sgpa${semester}`).innerText = sgpa;
+            calculateCGPA();
+        }
+
+        // Calculate CGPA
+        function calculateCGPA() {
+            const semesters = document.querySelectorAll('[id^="sgpa"]');
+            let totalCredits = 0;
+            let totalPoints = 0;
+
+            semesters.forEach(sgpaElement => {
+                const semesterSGPA = parseFloat(sgpaElement.innerText);
+                if (semesterSGPA > 0) {
+                    const row = sgpaElement.closest('div');
+                    const rows = row.querySelectorAll('table tbody tr');
+                    let semesterCredits = 0;
+
+                    rows.forEach(row => {
+                        const creditInput = row.cells[2].querySelector('input');
+                        const credit = parseInt(creditInput.value) || 0;
+                        semesterCredits += credit;
+                    });
+
+                    totalCredits += semesterCredits;
+                    totalPoints += semesterSGPA * semesterCredits;
+                }
+            });
+
+            const cgpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 0;
+            document.getElementById('cgpa').innerText = cgpa;
+        }
+
+        // Validate Credit Input
+        function validateCredit(input) {
+            if (parseInt(input.value) < 0) {
+                input.style.borderColor = 'red';
+            } else {
+                input.style.borderColor = '';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+body {
+    background-image: url('assets/backgrounds.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    /* Ensures the image covers the entire background */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-attachment: fixed;
+    /* Keeps the background fixed while scrolling */
+}
+header {
+    border-bottom: 1px solid white;
+}
+a {
+    text-decoration: none;
+}
+
+.Btech {
+    width: 60%;
+    /* Makes the BTech div smaller than the full width */
+    max-width: 1200px;
+    /* Max width to ensure it doesn't stretch too wide on larger screens */
+    margin: 30px auto 0;
+    /* Centers the BTech container */
+    background-color: #212529;
+    /* Dark background for the BTech div */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.Btech:hover {
+    transform: scale(1.05);
+    /* Hover effect to enlarge the BTech div */
+}
+
+.branch-btech h2 {
+    text-align: center;
+    color: white;
+}
+.branch-btech h3 {
+    text-align: center;
+    color: white;
+}
+
+.branch {
+    background-color: #7A1CAC;
+    color: #EAEAEA;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #AD49E1;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.branch:hover {
+    background-color: #AD49E1;
+    transform: translateY(-5px);
+}
+
+.branch:active {
+    background-color: #4B0F75;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.otherPrograms{
+    width: 60%;
+    /* Makes the BTech div smaller than the full width */
+    max-width: 1200px;
+    /* Max width to ensure it doesn't stretch too wide on larger screens */
+    margin: 30px auto 0;
+    /* Centers the BTech container */
+    background-color: #212529;
+    /* Dark background for the BTech div */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.otherPrograms h2 {
+    text-align: center;
+    color: white;
+}
+.otherPrograms:hover {
+    transform: scale(1.05);
+    /* Hover effect to enlarge the BTech div */
+}
+
+.info {
+    width: 60%;
+    /* Makes the BTech div smaller than the full width */
+    max-width: 1200px;
+    /* Max width to ensure it doesn't stretch too wide on larger screens */
+    margin: 30px auto 20px;
+    /* Centers the BTech container */
+    background-color: #212529;
+    /* Dark background for the BTech div */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.info h2 {
+    text-align: center;
+    color: white;
+}
+
+.info:hover {
+    transform: scale(1.05);
+    /* Hover effect to enlarge the BTech div */
+}
+

@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/planet.png" type="image/png">
+    <title>Uni-Gradify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="ece-ai.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header class="p-3" style="background-color:#6247aa "> <!-- Grey color background -->
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                <!-- Left side: Logo and AI & ML Text -->
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="../assets/planet.png" alt="logo" width="100" height="100">
+                    <span class="navbar-brand"
+                        style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.5rem;">
+                        ECE-AI - Know your GPA
+                    </span>
+                </a>
+
+                <!-- Right side: Feedback Button -->
+                <a href="https://www.igdtuw.ac.in/Academics.php?id=3"
+                    style="text-decoration: none;">
+                    <button type="button" class="btn btn-warning"
+                        style="padding: 12px 30px; font-size: 16px; border-radius: 5px; ">
+                        Get More Info About Syllabus
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <div class="main">
+            <!-- CGPA Display -->
+            <div class="cgpa-box my-4">
+                <h3>CGPA: <span id="cgpa">0.00</span></h3>
+            </div>
+
+
+            <!-- Semester 1 -->
+            <h2>Semester 1</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester1">
+                    <tr>
+                        <td>1.</td>
+                        <td>Analog Electronics</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(1)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Intelligent Systems</td>
+                        <td>3</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(1)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Applied Mathematics</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(1)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Basic Electrical Engineering</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(1)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Communication Skills</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(1)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Programming in C
+                            Language </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(1)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(1)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 1: <span id="sgpa1">0.00</span>
+                </button>
+            </div>
+
+
+            <!-- Semester 2 -->
+            <h2 style="padding-top: 20px;">Semester 2</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester2">
+                    <tr>
+                        <td>1.</td>
+                        <td>Digital Electronics</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(2)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Signals and Systems</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(2)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Programming With Python
+                        </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(2)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>IT- Workshop</td>
+                        <td>2</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(2)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Probability and Statistics</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(2)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Environmental Science</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(2)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(2)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 2: <span id="sgpa2">0.00</span>
+                </button>
+            </div>
+
+
+            <!-- Semester 3 -->
+            <h2 style="padding-top: 20px;">Semester 3</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester3">
+                    <tr>
+                        <td>1.</td>
+                        <td>Network Analysis and Synthesis</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Communication Systems</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Network Intelligence and AI</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Data Structures</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Open Elective Courses - NM, DBMS, etc.</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Generic Open Elective - NPTEL, etc.</td>
+                        <td>2</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td>Industrial Training/Internship</td>
+                        <td>1</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(3)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(3)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 3: <span id="sgpa3">0.00</span>
+                </button>
+            </div>
+
+            <!-- Semester 4 -->
+            <h2 style="padding-top: 20px;">Semester 4</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester4">
+                    <tr>
+                        <td>1.</td>
+                        <td>Linear Integrated Circuits</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(4)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Electromagnetic Field Theory</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(4)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Digital Commu
+                        nication Systems
+                        </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(4)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Optimization Techniques and Decision
+                        Making</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(4)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Open Elective Courses - COA,OOPS etc.</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(4)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Disaster Management</td>
+                        <td>2</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(4)">
+                            </div>
+                            <div class="grade-input-container show-grade">
+                                <!-- Grade dropdown will be dynamically added here -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(4)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 4: <span id="sgpa4">0.00</span>
+                </button>
+            </div>
+
+
+            <!-- Semester 5 -->
+            <h2 style="padding-top: 20px;">Semester 5</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester5">
+                    <tr>
+                        <td>1.</td>
+                        <td>Digital Signal Processing</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Contol Systems</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Machine Learning</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Computer Network</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Professional Ethics and Human Values</td>
+                        <td>3</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Industrial Training/Internship</td>
+                        <td>1</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td>Generic Open Elective </td>
+                        <td>2</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(5)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(5)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 5: <span id="sgpa5">0.00</span>
+                </button>
+            </div>
+
+            <!-- Semester 6 -->
+            <h2 style="padding-top: 20px;">Semester 6</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester6">
+                    <tr>
+                        <td>1.</td>
+                        <td>VLSI Design</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(6)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(6)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Digital Image Processing</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(6)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Departmental Elective - 1 </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(6)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Departmental Elective - 2</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(6)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Management Elective</td>
+                        <td>2</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(6)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(6)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 6: <span id="sgpa6">0.00</span>
+                </button>
+            </div>
+
+            <!-- Semester 7 -->
+            <h2 style="padding-top: 20px;">Semester 7</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester7">
+                    <tr>
+                        <td>1.</td>
+                        <td>Wireless and Mobile Communication</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Multimodal Data Analysis</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Departmental Elective - 3</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Departmental Elective - IV </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Minor Project</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Internship</td>
+                        <td>1</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td>Deep Learning</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks" oninput="calculateSGPA(7)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(7)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 7: <span id="sgpa7">0.00</span>
+                </button>
+            </div>
+
+
+
+            <!-- Semester 8 -->
+            <h2 style="padding-top: 20px;">Semester 8</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Subject</th>
+                        <th>Credit</th>
+                        <th>Type</th>
+                        <th>Marks / Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="semester8">
+                    <tr>
+                        <td>1.</td>
+                        <td>Recent Trends in AI</td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(8)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Departmental Elective - V </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(8)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Departmental Elective - VI </td>
+                        <td>4</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(8)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Major Project</td>
+                        <td>8</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(8)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Generic Open Elective</td>
+                        <td>2</td>
+                        <td>
+                            <select class="form-control type-select" onchange="toggleInput(this)">
+                                <option value="marks">Marks</option>
+                                <option value="grade">Grade</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="marks-input-container show-marks">
+                                <input type="number" class="marks-input form-control" placeholder="Enter Marks"
+                                    oninput="calculateSGPA(8)">
+                            </div>
+                            <div class="grade-input-container show-grade"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <button class="btn" onclick="calculateSGPA(8)" style="background-color: #6247aa; color: white;">
+                    SGPA for Semester 8: <span id="sgpa8">0.00</span>
+                </button>
+            </div>
+
+
+
+            <!-- CGPA Calculation Button -->
+            <div class="d-flex justify-content-center mt-4">
+                <button class="btn btn-warning" onclick="calculateCGPA()">Calculate CGPA</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class=" py-3 mt-4" style="border-top: 1px solid white; background-color: #6247aa;">
+        <div class="container text-center">
+            <span style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+                <img src="../assets/planet.png" alt="logo" width="50" height="50" class="me-2">
+                Made by <a href="https://www.linkedin.com/in/tannu-rawat-782757278/" target="_blank"
+                    class="text-decoration-underline text-white">Tannu
+                    Rawat</a>
+            </span>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="ece-ai.js"></script>
